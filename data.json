@@ -1,0 +1,45 @@
+{
+    "name": "yeona",
+    "id" : "@love_yeona_3000",
+    "pw" : "soyeona160",
+    "profile_img" : "pink2.jpg",
+    "profile_info" : "뭔가 잊고 온게 있는 것 같아. 괜히 이상하게 막 울 것만 같고",
+    "cloud" : [
+        {
+            "img_src" : "imgs/flower1.jpg",
+            "description": "꽃이 예뻤어"
+            },
+        {
+            "img_src" : "imgs/lavender.jpg",
+            "description": "꽃이 예뻤어"
+        },
+        {
+            "img_src" : "imgs/purple2.jpg",
+            "description": "꽃이 예뻤어"
+            },
+        {
+            "img_src" : "imgs/purple3.jpg",
+            "description": "꽃이 예뻤어"
+            },
+        {
+            "img_src" : "imgs/roses.jpeg",
+            "description": "꽃이 예뻤어"
+            },
+        {
+            "img_src" : "imgs/purple6.jpg",
+            "description": "꽃이 예뻤어"
+            },
+        {
+            "img_src" : "imgs/pink3.jpg",
+            "description": "꽃이 예뻤어"
+            },
+        {
+            "img_src" : "imgs/purple5.jpg",
+            "description": "꽃이 예뻤어"
+            },
+        {
+            "img_src" : "imgs/purple4.jpg",
+            "description": "꽃이 예뻤어"
+            }
+        ]
+}

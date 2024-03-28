@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><p>Cloudy</p></header>
+    <main>
+        <div class="clouds">
+            <div class="text clouds">clouds</div>
+            <div class="contents-container">
+                <!-- <div class="content"></div>
+                <div class="content"></div>
+                <div class="content"></div>
+                <div class="content"></div>
+                <div class="content"></div>
+                <div class="content"></div>
+                <div class="content"></div>
+                <div class="content"></div>
+                <div class="content"></div> -->
+        </div>
+        <menu>
+            <div class="slide">
+                <button class="createBtn">cloud</button>
+                <button class="createBtn">meteor</button>
+            </div>
+            <button class="createMenu">N</button>
+        </menu>
+        </div>
+        <aside>
+            <div class="mycloud">
+                <div class="text">my cloud</div>
+                <div class="profile">
+                    <img src="" alt="" class="profile-img">
+                    <p class="name"></p>
+                    <p class="userid"></p>
+                    <p class="info"></p>
+                </div>
+            </div>
+            <div class="text">meteor</div>
+            <div class="meteors-container">
+                <div class="meteor">하루하루 조금씩 나아질 거야.</div>
+                <div class="meteor">7시 30분까지 병원 방문 필요. 진단서와 함께 집에 간다...</div>
+                <div class="meteor">When you wish upon a star Makes no difference who you are </div>
+            </div>
+        </aside>
+
+    </main>
+    <div class="modal">
+        <div class="container">
+            <section class="modalheader">
+                <h3>새 클라우드 만들기</h3>
+                <button class="closeBtn">X</button>
+            </section>
+            <section class="inputsection">
+                <div id="img-box"><p>사진을 추가하세요</p></div>
+                <div class="post">
+                    <div class="usericon">
+                       <img src="" alt="" class="mini-icon">
+                        <p class="userid">@love_yeona_3000</p>
+                    </div>
+                    <form action="" get="POST">
+                        <input type="text" class="title" placeholder="문구를 입력하세요">
+                        <input type="file" id="file-input" placeholder="사진 찾기">
+                        <button id="submitCloud">구름 띄우기</button>
+                    </form> 
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="meteor-modal">
+        <div class="meteor-input">
+            <form action="" class="input-text" get="POST">
+                <input type="text" class="meteor-text" placeholder="감상을 메테오에 담아 보세요.">
+                <button id="submitCloud">메테오 보내기</button>
+            </form>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
