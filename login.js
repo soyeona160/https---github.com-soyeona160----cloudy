@@ -21,7 +21,7 @@ function color() {
     }
 }
 
-function moveToMain(){
+function moveToMain(){ 
     location.replace("./main.html");
 }
 

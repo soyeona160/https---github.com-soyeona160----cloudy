@@ -14,18 +14,18 @@ async function showUser(){
     let response = await fetch("data.json")
     let user = await response.json()
 
-    let clouds = user.cloud
+    // let clouds = user.cloud  
 
-    for(let cloud of clouds){
-        let content = document.createElement('div')
-        content.className = "content"
-        let img = document.createElement('img')
-        img.src = cloud.img_src
-        img.style.width = '100%'
-        img.style.height = '100%'
-        content.appendChild(img)
-        contents.appendChild(content)
-    }
+    // for(let cloud of clouds){
+    //     let content = document.createElement('div')
+    //     content.className = "content"
+    //     let img = document.createElement('img')
+    //     img.src = cloud.img_src
+    //     img.style.width = '100%'
+    //     img.style.height = '100%'
+    //     content.appendChild(img)
+    //     contents.appendChild(content)
+    // }
 
     document.querySelector('.profile-img').src = user.profile_img
     document.querySelector('.name').innerHTML = user.name
@@ -60,7 +60,7 @@ function openModal(e){
 
 window.addEventListener('click', openModal)
 
-const fileInput = document.getElementById('file-input')
+const fileInput = document.getElementById('file_input')
 const imgBox = document.getElementById('img-box')
 
 function isValid(type){
@@ -90,17 +90,5 @@ function displayImg(e){
 }
 
 showUser()
-const send = document.getElementById("submitCloud");
-send.addEventListener("click", function () {
-  let text = document.querySelector(".title");
-  let file = document.getElementById("file-input");
-  isValid(file.type)
-  let clouds = showUser()
-  let cloud = new saveCloud(URL.createObjectURL(file), text.value)
-  clouds.cloud[clouds.length] = cloud
-  console.log(cloud)
-});
-
-
 
 fileInput.addEventListener('change', displayImg)

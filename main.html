@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body> 
     <header><p>Cloudy</p></header>
     <main>
         <div class="clouds">
@@ -63,11 +63,14 @@
                        <img src="" alt="" class="mini-icon">
                         <p class="userid">@love_yeona_3000</p>
                     </div>
-                    <form action="" get="POST">
-                        <input type="text" class="title" placeholder="문구를 입력하세요">
-                        <input type="file" id="file-input" placeholder="사진 찾기">
-                        <button id="submitCloud">구름 띄우기</button>
-                    </form> 
+                    <div>
+                        <form action="" get="POST" id="cloudfrm">
+                            <input type="text" id="diary" class="title" placeholder="문구를 입력하세요">
+                            <input type="file" id="file_input" placeholder="사진 찾기">
+                            <input type="submit" id="submitCloud" value="구름 띄우기">
+                        </form>
+                        
+                    </div> 
                 </div>
             </section>
         </div>
@@ -80,6 +83,8 @@
             </form>
         </div>
     </div>
+    <script src="test/list.js"></script>
+    <script src="test/write.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
