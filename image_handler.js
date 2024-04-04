@@ -1,0 +1,1 @@
+const newBlob = new Blob(array, options)

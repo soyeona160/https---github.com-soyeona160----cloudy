@@ -1,32 +1,25 @@
 body{
     padding: 0; margin: 0;
     box-sizing: border-box;
-    width: 100vw; height: 100vh;
-    /* background-color: cornflowerblue */
-}
+    width: 100vw; height: 100vh;}
  
 header{
     width: 100vw; height: 70px;
     border-bottom: 1px solid #909090;
     position: absolute;
     top: 0; left: 0; right: 0;
-    /* background-color: #ececec; */
 }
 header p{
     font-family: 'Lobster', cursive;
     font-weight: bold;
     font-size: 2rem;
     padding: 10px 40px;
-    /* color: cornflowerblue; */
-    cursor: pointer;
-}
+    cursor: pointer;}
 main{
     width: 95%; height: 90vh;
     padding: 70px 0 0 0;
     display: flex;
-    justify-content: center;
-    background:url(새폴더/flower);
-}
+    justify-content: center;}
 main .clouds{
     width: 52%;
     background-color: #fff;
@@ -43,15 +36,17 @@ main .clouds{
 }
 .content{
     width: 300px; height: 300px;
-    /* background-color:cornflowerblue; */
     border-radius: 30px;
     border: 3px solid snow;
     overflow: hidden;
+    transition: all 0.2s ease-in-out;
+}
+.content:hover{
+    width: 305px; height: 305px;
 }
 main aside{
     width: 19%;
     border-left: 1px solid #909090;
-    /* background-color: beige; */
     border-right: 1px solid #909090;
 }
 
@@ -62,9 +57,7 @@ main aside .mycloud{
     justify-content: first baseline;
     align-items: center;
     background-color: #fff;
-    border-bottom: 1px solid #acacac
-    /* background-color: azure; */
-    
+    border-bottom: 1px solid #acacac   
 }
 
 .mycloud .profile{
@@ -95,7 +88,6 @@ p{
     align-items: center;
     justify-content: first baseline;
     gap: 10px;
-    /* background-color: blue; */
 }
 
 .meteor{
@@ -108,7 +100,13 @@ p{
     align-items: center;
     padding: 5px;
     box-shadow: #909090;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.meteor:hover{
     
+    box-shadow: 0px 0px 10px 3px #d1d1d1;
 }
 
 .clouds{
@@ -122,8 +120,11 @@ menu{
     z-index: 1;
     bottom: 0; right: 10px;
 }
+
 .slide{
     display: flex;
+    position: absolute;
+    right: -10px;
     width: 0;
     background-color: rgba(255, 255, 255, 0.658);
     display: none;
@@ -134,7 +135,12 @@ menu{
     width: 70px; height: 70px;
     border-radius: 20px;
     border:none;
-    /* background-color: bisque; */
+}
+
+.createMenu:hover{
+    background-color: rgb(110, 131, 177);
+    color:blue;
+    font-weight: bold;
 }
 
 .createBtn{
@@ -242,14 +248,6 @@ menu{
     overflow-wrap: normal;
 }
 
-.hide{
-    display: none;
-}
-
-.show{
-    display: block;
-}
-
 .meteor-modal{
     display: none;
     position: absolute;
@@ -258,6 +256,14 @@ menu{
     background-color: rgba(88, 88, 88, 0.397);
     z-index: 2;
     backdrop-filter:blur(5px)
+}
+.meteor-input button{
+    all: unset;
+    position: absolute;
+    top: 15px; right: 15px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    cursor: pointer;
 }
 
 .meteor-input{
@@ -269,7 +275,7 @@ menu{
     transform: translate(-50%, -50%);
 }
 
-.meteor-text{
+#meteor_text{
     all:unset;
     margin: 25px;
     width: 450px;
@@ -300,4 +306,311 @@ menu{
 }
 #submitCloud:hover{
     color:blue
+}
+
+
+.show_meteor{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 1;
+    background-color: rgba(11, 10, 85, 0.226);
+    overflow: hidden;
+}
+.show_meteor .container{
+    width: 700px;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.show_meteor .container .meteor{
+    width: 85%;
+    margin: 20px auto;
+}
+
+
+.show_cloud{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 1;
+    background-color: rgba(11, 10, 85, 0.226);
+    overflow: hidden;
+}
+
+.show_cloud header{
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.show_cloud .container{
+    width: 700px;
+    height: 800px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.show_cloud .container .photo_container{
+    width : 600px; height: 400px;
+    margin: 10px auto;
+}
+
+.show_cloud .container .text_container{
+    width: 600px;
+    height: 300px;
+    margin: 10px auto;
+}
+.show_cloud .container header{
+    width: 100%;
+}
+
+.show_cloud button{
+    all: unset;
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.4rem;
+    cursor: pointer;
+    text-align: center;
+}
+.show_cloud .closeBtn{
+    top: 0px; right: -30px;
+}
+.show_cloud .prevBtn{
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    border : 1px solid black;
+    top : 50%;
+    left : -100px;
+}
+
+.show_cloud .nextBtn{
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    border : 1px solid black;
+    top : 50%;
+    right : -100px;
+}
+
+.show_cloud .prevBtn:hover{
+    background-color: rgba(0, 0, 255, 0.404);
+}
+
+.show_cloud .nextBtn:hover{
+    background-color: rgba(0, 0, 255, 0.404);
+}
+
+.toggle{
+    position: absolute;
+    left: 650px; top: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+.more .material-symbols-outlined{
+    font-size: 2rem;
+    color:rgb(46, 46, 46);
+}
+
+#toggleMenu{
+    width: 70px; 
+    position: absolute;
+    text-align: center;
+    top: 30px;
+    left: -40px;
+    padding: 5px;
+}
+
+#toggleMenu p{
+    border-radius: 5px;
+    height: 20px;
+    padding: 9px;
+}
+#toggleMenu p:hover{
+    background-color: #acacac;
+}
+
+.check_modal{
+    display: none;
+    width: 100vw; height: 100vh;
+    z-index: 3;
+    background-color: #3131318a;
+    position: absolute;
+    top: 0;
+}
+
+.check_modal .check{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 500px; height: 150px;
+    border-radius: 30px;
+    flex-flow: column;
+    justify-content:center;
+    align-items: center;
+    padding: 20px;
+}
+.question{
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+.sub{
+    margin: 10px 0 20px 0;
+    color:#3f3f3f;
+}
+
+.answer{
+    width: 100%; height: 60px;
+    border-top: 1px solid #f1f1f1;
+    display: flex;
+    cursor: pointer;
+    line-height: 60px;
+    text-align: center;
+    padding: 5px;
+}
+.yes{
+    width: 50%;
+    border-radius: 20px;
+}
+.no{
+    width: 50%;
+    border-radius: 20px;
+
+}
+
+.yes:hover{
+    background-color: #f1f1f1;
+    font-weight: bold;
+    color:rgb(61, 113, 255);
+}
+.no:hover{
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+.update{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 2;
+    background-color: rgba(11, 10, 85, 0.226);
+    overflow: hidden;
+}
+
+.update .container {
+    width: 700px;
+    height: 800px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    display: flex;
+    flex-flow:column;
+    justify-content: center;
+    align-items: center;
+}
+.update .container .text{
+    position: absolute;
+    top: 10px; left: 10px;
+}
+
+.update .closeBtn{
+    all: unset;
+    width: 40px; height: 40px;
+    text-align: center;
+    /* line-height: 50px; */
+    /* background-color: #fff; */
+    position: absolute;
+    top: 10px; right: 20px;
+    cursor: pointer;
+}
+
+.update .closeBtn .material-symbols-outlined{
+    transition: all 0.1s ease-in-out;
+    display: block;
+    border-radius: 50%;
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+.update .closeBtn .material-symbols-outlined:hover{
+    background-color: #e4e4e4;
+    color:rgb(61, 113, 255);
+}
+
+.updatePhoto{
+    width : 600px; height: 350px;
+    margin: 10px auto;
+    background-color: #909090;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.updatePhoto .material-symbols-outlined{
+    font-size: 3rem;
+    font-weight: bold;
+    display: block;
+}
+
+.updatePhoto:hover{
+    color:rgb(65, 65, 255);
+}
+
+#updateText{
+    all:unset;
+    display : inline-block;
+    padding: 5px;
+    width: 590px;
+    height: 300px;
+    border: 1px solid #909090;
+    text-align: start;
+    overflow-wrap: normal;
+}
+
+#done{
+    all: unset;
+    font-weight: bold;
+    width: 120px; height: 50px;
+    /* background-color: #acacac; */
+    text-align: center;
+    position: absolute;
+    bottom: 10px; right: 30px;
+    border-radius: 20px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+#done:hover{
+    background-color: #e4e4e4;
+    color:rgb(61, 113, 255);
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
 }
