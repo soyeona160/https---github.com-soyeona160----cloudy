@@ -38,7 +38,7 @@ main{
     justify-content: center;}
 main .clouds{
     width: 52%;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.527);
     position: relative;
     border-left: 1px solid #909090;
 }
@@ -68,8 +68,8 @@ main .clouds .text{
 }
 main aside{
     width: 19%;
-    border-left: 1px solid #909090;
-    border-right: 1px solid #909090;
+    /* border-left: 1px solid #909090;
+    border-right: 1px solid #909090; */
 }
 
 main aside .mycloud{
@@ -79,7 +79,7 @@ main aside .mycloud{
     justify-content: first baseline;
     align-items: center;
     background-color: #fff;
-    border-bottom: 1px solid #acacac   
+    /* border-bottom: 1px solid #acacac    */
 }
 
 .mycloud .profile{
