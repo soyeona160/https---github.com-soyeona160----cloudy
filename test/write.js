@@ -103,7 +103,7 @@ const submitHandler = (e)=>{
             alert(e.message)
             console.log(e)
         }
-         e.target.result // 이걸 로컬스토리지에 저장
+        //  e.target.result // 이걸 로컬스토리지에 저장
     }
     reader.readAsDataURL(file)
 }

@@ -10,6 +10,14 @@ function showUpdate(){
     document.querySelector('#updateText').innerHTML = clouds[currIndex].description
 }
 
+function setImg(e, arr){
+    arr[currIndex].file = `${e.target.result}`
+
+    const updatedClouds = JSON.stringify(arr)
+    localStorage.setItem("feeds", updatedClouds)
+    window.location.reload()
+}
+
 function submitUpdate(e){
     e.preventDefault()
     const feeds = JSON.parse(localStorage.getItem("feeds"))
@@ -17,17 +25,11 @@ function submitUpdate(e){
     const reader = new FileReader();
     feeds[currIndex].description = text
 
-    reader.onload = (e) =>{
-        if(text.length === 0){
-            throw new Error()
+    reader.onload((e)=>{
+        try{
+            
         }
-
-        feeds[currIndex].file = `${e.target.result}`
-
-        const updatedClouds = JSON.stringify(feeds)
-        localStorage.setItem("feeds", updatedClouds)
-        window.location.reload()
-    }
+    })
 
     console.log('done!') // 이건 돌아가는데 reader가 안돌아가네 
 }
