@@ -27,6 +27,8 @@ function getCloud(){
         content.id = `${cloud.index}`
         let img = document.createElement('img')
         img.src = cloud.file
+        img.style.width = "100%"
+        img.style.height = "100%"
         content.appendChild(img)
         container.appendChild(content)
     }

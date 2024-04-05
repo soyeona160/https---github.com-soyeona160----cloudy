@@ -70,6 +70,8 @@ function displayImg(e){
     img.className = 'show-img'
     img.src = URL.createObjectURL(file) //파일 경로 설정 (이미지 임시 경로 생성)
     //blob:http://127.0.0.1:5500/c68a7984-0d99-4617-bf30-250a6faa8382 이런거 만들어짐
+    img.style.width= '100%'
+    img.style.height= '100%'
     imgBox.innerHTML = '' //그 전에 업로드했던 파일 제거
     imgBox.appendChild(img) //업로드한 파일을 화면에 보여주기
     // 파일이 이미지인 경우에만 처리하기 (유효성 검증) 

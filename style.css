@@ -1,22 +1,38 @@
+@font-face {
+    font-family: 'TTLaundryGothicB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
 body{
     padding: 0; margin: 0;
     box-sizing: border-box;
-    width: 100vw; height: 100vh;}
+    width: 100vw; height: 100vh;
+    background: url(/imgs/푸른하늘과\ 구름-148_2560x1440.jpg);
+    overflow: hidden;
+}
  
 header{
     width: 100vw; height: 70px;
     border-bottom: 1px solid #909090;
     position: absolute;
     top: 0; left: 0; right: 0;
+    background-color: #fff;
 }
+
 header p{
-    font-family: 'Lobster', cursive;
+    font-family: 'TTLaundryGothicB';
     font-weight: bold;
     font-size: 2rem;
     padding: 10px 40px;
+    line-height: 60px;
+    color:#1d1d1d;
     cursor: pointer;}
+
 main{
-    width: 95%; height: 90vh;
+    width: 95%; height: 100vh;
     padding: 70px 0 0 0;
     display: flex;
     justify-content: center;}
@@ -25,6 +41,9 @@ main .clouds{
     background-color: #fff;
     position: relative;
     border-left: 1px solid #909090;
+}
+main .clouds .text{
+    width: 100%;
 }
 .contents-container{
     padding-top: 10px;
@@ -40,9 +59,12 @@ main .clouds{
     border: 3px solid snow;
     overflow: hidden;
     transition: all 0.2s ease-in-out;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200px;
 }
 .content:hover{
-    width: 305px; height: 305px;
+    box-shadow: 0 0 10px #d1d1d1;
 }
 main aside{
     width: 19%;
@@ -68,13 +90,9 @@ main aside .mycloud{
 .profile-img{
     width: 100%; height: 250px;
 }
-.text{
-    width: 95%;
-    background-color: rgba(255, 250, 250, 0.205);
-    font-weight: bold;
-    font-size: 1.4rem;
-    user-select: none;
-    padding: 0 15px;
+
+.text img{
+    width: 32px; height: 32px;
 }
 
 p{
@@ -109,6 +127,25 @@ p{
     box-shadow: 0px 0px 10px 3px #d1d1d1;
 }
 
+.text{
+    font-family: 'TTLaundryGothicB';
+    display: flex;
+    width: 100%; height: 40px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    user-select: none;
+    text-align: center;
+    background-color: #fff;
+}
+
+.text .material-symbols-outlined{
+    padding-left: 8px;
+    font-size: 2rem;
+}
+
 .clouds{
     position: relative;
 }
@@ -116,43 +153,66 @@ p{
 menu{
     display: flex;
     margin: 0;
-    position: absolute;
+    position: fixed;
     z-index: 1;
-    bottom: 0; right: 10px;
+    bottom: 20px;
+    right: 37%;
 }
 
 .slide{
     display: flex;
     position: absolute;
-    right: -10px;
-    width: 0;
+    bottom:65px; right: -35px;
+    width: 100px;
     background-color: rgba(255, 255, 255, 0.658);
-    display: none;
-    transition: .2s all ease-in-out;
+    transition: .07s all ease-out;
 }
 
 .createMenu{
     width: 70px; height: 70px;
-    border-radius: 20px;
+    border-radius: 50%;
     border:none;
+    color: #fff;
+    background-color: rgb(122, 161, 235);
+    z-index: 1;
 }
 
+
+#C{
+    background: url(/imgs/cloud_1163573.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 36px;
+}
+
+#M{
+    background: url(/imgs/star_6015464.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px;
+}
 .createMenu:hover{
-    background-color: rgb(110, 131, 177);
-    color:blue;
+    background-color: dodgerblue;
+    color:#fff;
     font-weight: bold;
 }
 
 .createBtn{
     all: unset;
     cursor:pointer;
-    margin: 15px;
-    width: 50%;
+    position: absolute;
+    width: 60px; height: 60px;
+    border: 1px solid cornflowerblue;
+    border-radius: 50%;
+    background-color: aliceblue;
+    transition: all 0.2s ease-in-out;
 }
 
-.createBtn:hover{
-    color:blue;
-    font-weight: bold;
+#C:hover{
+    box-shadow: 0px 0px 15px rgba(46, 174, 206, 0.685);
+}
+#M:hover{
+    box-shadow: 0px 0px 15px rgba(46, 174, 206, 0.685);
 }
 
 .name{
@@ -319,6 +379,15 @@ menu{
     background-color: rgba(11, 10, 85, 0.226);
     overflow: hidden;
 }
+
+.show_meteor div
+
+.show_meteor div span{
+    font-size: 2rem;
+    color: #fff;
+}
+
+
 .show_meteor .container{
     width: 700px;
     height: 100vh;
@@ -344,10 +413,10 @@ menu{
 }
 
 .show_cloud header{
+    width: 100%;
     position: relative;
     height: 50px;
     line-height: 50px;
-    padding-left: 20px;
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -385,49 +454,73 @@ menu{
 }
 .show_cloud .closeBtn{
     top: 0px; right: -30px;
+    color: #fff;
+    font-weight: bold;
 }
 .show_cloud .prevBtn{
+    z-index: 3;
     width: 50px; height: 50px;
     border-radius: 50%;
-    border : 1px solid black;
+    border : 2px solid #fff;
     top : 50%;
     left : -100px;
+    color: #fff;
 }
 
 .show_cloud .nextBtn{
     width: 50px; height: 50px;
     border-radius: 50%;
-    border : 1px solid black;
+    border : 2px solid #fff;
     top : 50%;
     right : -100px;
+    color: #fff
 }
 
 .show_cloud .prevBtn:hover{
-    background-color: rgba(0, 0, 255, 0.404);
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgb(116, 192, 255);
+    color: rgb(116, 192, 255);
+    border: 1px solid rgb(116, 192, 255);
 }
 
 .show_cloud .nextBtn:hover{
-    background-color: rgba(0, 0, 255, 0.404);
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgb(116, 192, 255);
+    color: rgb(116, 192, 255);
+    border: 1px solid rgb(116, 192, 255);
 }
 
 .toggle{
     position: absolute;
-    left: 650px; top: 10px;
+    width: 40px; height: 40px;
+    text-align: center;
+    left: 650px; top: 5px;
     cursor: pointer;
     z-index: 2;
+    border-radius: 50%;
+}
+.toggle .more{
+    width: 100%;
+    text-align: center;
 }
 .more .material-symbols-outlined{
-    font-size: 2rem;
     color:rgb(46, 46, 46);
+    line-height: 40px;
+    font-size: 2rem;
 }
 
 #toggleMenu{
     width: 70px; 
     position: absolute;
     text-align: center;
-    top: 30px;
+    top: 40px;
     left: -40px;
     padding: 5px;
+
+}
+
+.toggle:hover{
+    background-color: #d1d1d1;
 }
 
 #toggleMenu p{
@@ -436,7 +529,8 @@ menu{
     padding: 9px;
 }
 #toggleMenu p:hover{
-    background-color: #acacac;
+    background-color: rgba(116, 192, 255, 0.671);
+    box-shadow: 0px 0px 10px rgba(126, 177, 219, 0.699);
 }
 
 .check_modal{
@@ -459,6 +553,7 @@ menu{
     justify-content:center;
     align-items: center;
     padding: 20px;
+    text-align: center;
 }
 .question{
     line-height: 30px;
@@ -486,16 +581,17 @@ menu{
 .no{
     width: 50%;
     border-radius: 20px;
+    background-color:#f1f1f1 ;
 
 }
 
 .yes:hover{
-    background-color: #f1f1f1;
+    background-color: rgb(177, 178, 187);
     font-weight: bold;
     color:rgb(61, 113, 255);
 }
 .no:hover{
-    background-color: #f1f1f1;
+    background-color: rgb(177, 178, 187);
     font-weight: bold;
 }
 .update{
@@ -508,7 +604,9 @@ menu{
     background-color: rgba(11, 10, 85, 0.226);
     overflow: hidden;
 }
-
+.update p{
+    width: 50%;
+}
 .update .container {
     width: 700px;
     height: 800px;
@@ -527,7 +625,7 @@ menu{
     top: 10px; left: 10px;
 }
 
-.update .closeBtn{
+.update .exitUpdate{
     all: unset;
     width: 40px; height: 40px;
     text-align: center;
@@ -538,7 +636,7 @@ menu{
     cursor: pointer;
 }
 
-.update .closeBtn .material-symbols-outlined{
+.update .exitUpdate .material-symbols-outlined{
     transition: all 0.1s ease-in-out;
     display: block;
     border-radius: 50%;
@@ -552,7 +650,7 @@ menu{
 }
 
 
-.update .closeBtn .material-symbols-outlined:hover{
+.update .exitUpdate .material-symbols-outlined:hover{
     background-color: #e4e4e4;
     color:rgb(61, 113, 255);
 }
@@ -605,6 +703,25 @@ menu{
 #done:hover{
     background-color: #e4e4e4;
     color:rgb(61, 113, 255);
+}
+
+.icon{
+    width: 32px; height: 32px;
+    background: url(/imgs/cloud_1163573.png);
+}
+
+.contents-container::-webkit-scrollbar {
+    width: 10px;
+}
+.contents-container::-webkit-scrollbar-track {
+    display: none;
+}
+.contents-container::-webkit-scrollbar-thumb { 
+    background-color: skyblue;
+    border-radius: 10px;
+}
+.contents-container::-webkit-scrollbar-button {
+    display: none;
 }
 
 .hide{

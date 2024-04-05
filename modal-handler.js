@@ -14,44 +14,33 @@ let targetInnerHTML
 // 쓰기모달
 function openModal(e){
     console.log(e.target)
-    if(e.target.innerHTML ==="Cloud"){
+    if(e.target.id ==="C"){
         modal.classList.add('show')
     }
-    if(e.target.innerHTML === "Meteor"){
+    if(e.target.id === "M"){
         meteorModal.classList.add('show')
     }
-
-    // if(e.target.className === "content"){
-    //     modal.classList.add('show')
-    // }
 }
 
 // 버튼
 function openMenu(e){
-    if(e.target.innerHTML === "N"){
-        document.querySelector('.slide').style.width = '200px'
-        document.querySelector('.slide').style.right = '20px'
-        document.querySelector('.slide').style.display = 'flex'
-    }
-
-    if(targetInnerHTML===e.target.innerHTML){
-        document.querySelector('.slide').classList.remove('show')
-    }
+    document.querySelector('#C').style.transform = 'translate(-10px,-70px)'
+    document.querySelector('#M').style.transform = 'translate(-70px,-10px)'
 }
 
 
 // 모달 닫기
 function closeModal(){
-    modal.classList.remove('show')
     meteorModal.classList.remove('show')
+    modal.classList.remove('show')
     cloudModal.classList.remove('show')
 }
 
 // 게시글 읽기 모달 
 function openCloudReader(e){
-    cloudModal.classList.add('show')
-    let index = e.target.parentElement.id
     if(e.target.parentElement.className === "content"){
+        cloudModal.classList.add('show')
+        let index = e.target.parentElement.id
         showDiary(index)
         currIndex = index
     }
@@ -96,22 +85,33 @@ function showNextPage(){
 //     }
 //     document.querySelector('.check_modal').classList.remove('.show')
 // }
-
+function openCheck(question, sub){
+    document.querySelector('.question').innerHTML = question
+    document.querySelector('.sub').innerHTML = sub
+    document.querySelector('.check_modal').classList.add('show')
+}
 
 function handleToggle(e){
     if(e.target.innerText === '수정'){
         console.log('수정 화면으로 변경')
         showUpdate()
     }
+
+    if(e.target.innerText === '삭제'){
+        let question = '구름을 삭제하시겠어요?'
+        let sub = '삭제된 구름은 복구할 수 없어요.'
+        openCheck(question, sub)
+        answer.addEventListener('click', handleDelete)
+    }
     
 }
+
 
 toggle.addEventListener('click', handleToggle)
 
 
 
-window.addEventListener('mouseover', openMenu)
-menu.addEventListener('click', openModal)
+
 
 for(let closeBtn of closeBtns){
     closeBtn.addEventListener('click', closeModal)
@@ -119,8 +119,7 @@ for(let closeBtn of closeBtns){
 
 console.log(clouds)
 container.addEventListener('click', openCloudReader)
-
+document.querySelector('.createMenu').addEventListener('mouseover', openMenu)
+menu.addEventListener('click', openModal)
 prevBtn.addEventListener('click', showPrevPage)
 nextBtn.addEventListener('click', showNextPage)
-
-// document.querySelector('.answer').addEventListener('click', handleAnswer)

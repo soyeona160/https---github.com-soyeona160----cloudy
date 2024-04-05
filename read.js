@@ -1,8 +1,10 @@
 const meteors = document.querySelectorAll('.meteor')
 const slider = document.querySelector('.slider')
 const showMeteor = document.querySelector('.show_meteor')
+const photoContainer = document.querySelector('.photo_container')
 // const content = document.querySelectorAll('.content')
 let currIndex
+
 function showAllMeteors(e){
     const meteorObj = JSON.parse(localStorage.getItem("meteors"))
     console.log(e.target)
@@ -24,6 +26,7 @@ function scrollToItem(e){
     if(e.target.classList.contains('meteor')){
         e.target.scrollIntoView({behavior: "smooth", block : "center", })
         e.target.style.height = `200px`
+        e.target.style.alignItems = 'flex-start'
     }
     if(prevTarget){
         if(prevTarget !== e.target){
@@ -42,7 +45,9 @@ meteorsContainer.addEventListener('click', showAllMeteors)
 function showDiary(i){
     const feedsObj = JSON.parse(localStorage.getItem("feeds"))
     document.querySelector('.date').innerHTML = feedsObj[i].date // 날짜
-    document.querySelector('.photo_container').style.background = `url(${feedsObj[i].file})`
+    photoContainer.style.background = `url(${feedsObj[i].file})`
+    photoContainer.style.backgroundRepeat = 'no-repeat'
+    photoContainer.style.backgroundPosition = 'center'
     document.querySelector('.text_container').innerHTML = feedsObj[i].description // 본문
 
 }

@@ -10,23 +10,32 @@
 </head>
 <body> 
     <main>
-        <header><p>Cloudy</p></header>
+        <header>
+            <p>Cloudy</p>
+        </header>
         <div class="clouds">
-            <div class="text clouds">clouds</div>
+            <div class="text">
+                <div class="icon"></div> 
+                <span>클라우드</span>
+            </div>
             <div class="contents-container">
 
         </div>
         <menu>
             <div class="slide">
-                <button class="createBtn">Cloud</button>
-                <button class="createBtn">Meteor</button>
+                <button class="createBtn" id="C"></button>
+                <button class="createBtn" id="M"></button>
             </div>
-            <button class="createMenu">N</button>
+            <button class="createMenu"><span class="material-symbols-outlined">
+                add
+                </span></button>
         </menu>
         </div>
         <aside>
             <div class="mycloud">
-                <div class="text">my cloud</div>
+                <div class="text">
+                    <span class="material-symbols-outlined">account_circle</span><span>내 정보</span> 
+                    </div>
                 <div class="profile">
                     <img src="" alt="" class="profile-img">
                     <p class="name"></p>
@@ -34,7 +43,11 @@
                     <p class="info"></p>
                 </div>
             </div>
-            <div class="text">meteor</div>
+
+            <div class="text">
+                <img src="/imgs/star_6015464.png" alt="">
+                <span>메테오</span>
+            </div>
             <div class="meteors-container">
             </div>
         </aside>
@@ -43,7 +56,7 @@
     <div class="modal">
         <div class="container">
             <section class="modalheader">
-                <h3>새 클라우드 만들기</h3>
+                <h3>새로운 구름 만들기</h3>
                 <button class="closeBtn"><span class="material-symbols-outlined">close</span></button>
             </section>
             <section class="inputsection">
@@ -75,7 +88,7 @@
         </div>
     </div>
     <div class="show_meteor">
-        <button class="closeBtn"><span class="material-symbols-outlined">close</span></button>
+        <div class="closeBtn"><span class="material-symbols-outlined">close</span></div>
         <div class="container slider"></div>
     </div>
 
@@ -83,12 +96,12 @@
     <div class="show_cloud">
         <div class="container read">
             <div class="toggle">
-                <button class="more"><span class="material-symbols-outlined">
+                <div class="more"><span class="material-symbols-outlined">
                     more_horiz</span>
-                </button>
+                </div>
                 <div id="toggleMenu">
                     <p>수정</p>
-                    <p>삭제</p>
+                    <p id="delete">삭제</p>
                 </div>
             </div>
             <button class="closeBtn"><span class="material-symbols-outlined">close</span></button>
@@ -108,8 +121,8 @@
     </div>
     <div class="check_modal">
         <div class="check">
-            <div class="question">정말 삭제하시겠어요?</div>
-            <div class="sub">삭제한 구름은 복구할 수 없어요.</div>
+            <div class="question"></div>
+            <div class="sub"></div>
             <div class="answer">
                 <div class="yes">
                     확인
@@ -123,7 +136,7 @@
 
     <div class="update">
         <div class="container">
-            <button class="closeBtn"><span class="material-symbols-outlined">close</span></button>
+            <div class="exitUpdate"><span class="material-symbols-outlined">close</span></div>
             <p class="text">구름 수정하기</p>
 
             <form action="" class="updateFrm" get="POST">
@@ -142,6 +155,7 @@
     <script src="test/write.js"></script>
     <script src="app2.js"></script>
     <script src="read.js"></script>
+    <script src="delete.js"></script>
     <script src="modal-handler.js"></script>
     <script src="update.js"></script>
 </body>
